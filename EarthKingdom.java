@@ -1,4 +1,4 @@
-public class EarthKingdom extends AllianceDirect {
+public class EarthKingdom extends IndustrialAlliance {
 
     protected static int instanceCount = 0;
 

@@ -6,7 +6,7 @@ public class MasterFireNation extends FireNation {
         super(startEP, x, y);
     }
 
-    public static MasterFireNation getInstance(int startEP, int x, int y) {
+    public static synchronized MasterFireNation getInstance(int startEP, int x, int y) {
         if (instance == null) {
             instance = new MasterFireNation(startEP, x, y);
         }

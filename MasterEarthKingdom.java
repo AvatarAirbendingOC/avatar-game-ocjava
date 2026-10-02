@@ -6,7 +6,7 @@ public class MasterEarthKingdom extends EarthKingdom {
         super(startEP, x, y);
     }
 
-    public static MasterEarthKingdom getInstance(int startEP, int x, int y) {
+    public static synchronized MasterEarthKingdom getInstance(int startEP, int x, int y) {
         if (instance == null) {
             instance = new MasterEarthKingdom(startEP, x, y);
         }

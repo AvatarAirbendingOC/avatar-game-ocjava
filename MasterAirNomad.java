@@ -6,7 +6,7 @@ public class MasterAirNomad extends AirNomad {
         super(startEP, x, y);
     }
 
-    public static MasterAirNomad getInstance(int startEP, int x, int y) {
+    public static synchronized MasterAirNomad getInstance(int startEP, int x, int y) {
         if (instance == null) {
             instance = new MasterAirNomad(startEP, x, y);
         }

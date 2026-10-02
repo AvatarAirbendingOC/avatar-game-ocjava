@@ -1,4 +1,4 @@
-public class WaterTribe extends AllianceFlow {
+public class WaterTribe extends HarmoniousAlliance {
 
     protected static int instanceCount = 0;
 

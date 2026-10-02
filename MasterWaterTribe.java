@@ -6,7 +6,7 @@ public class MasterWaterTribe extends WaterTribe {
         super(startEP, x, y);
     }
 
-    public static MasterWaterTribe getInstance(int startEP, int x, int y) {
+    public static synchronized MasterWaterTribe getInstance(int startEP, int x, int y) {
         if (instance == null) {
             instance = new MasterWaterTribe(startEP, x, y);
         }

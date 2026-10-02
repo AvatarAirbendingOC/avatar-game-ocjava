@@ -15,11 +15,22 @@ public abstract class Individual implements Occupant {
     protected static final int MAX_STEP_DISTANCE = 3;
     protected static final int SAFEZONE_RECOVERY = 15;
 
+    // Aggregate count across every faction (each faction class also keeps
+    // its own count; this is the base-class total). Kept protected with a
+    // public accessor rather than a raw public field, so nothing outside
+    // this hierarchy can corrupt it directly.
+    protected static int totalIndividualsCreated = 0;
+
     protected Individual(int startEP, int x, int y) {
         this.ep = startEP;
         this.maxEp = startEP;
         this.x = x;
         this.y = y;
+        totalIndividualsCreated++;
+    }
+
+    public static int getTotalIndividualsCreated() {
+        return totalIndividualsCreated;
     }
 
     public abstract void move(GameMap map);

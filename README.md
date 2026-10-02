@@ -46,7 +46,7 @@ This project was built specifically to put the course's core ideas into practice
 
 **Encapsulation** — `Individual`'s state (`ep`, `messages`, position) is `protected`, never touched directly from outside the class; all access goes through controlled methods (`receiveMessage`, `loseEP`, `gainEP`). `getMessages()` returns a defensive copy so callers can't mutate internal state through the reference.
 
-**Inheritance** — a four-level hierarchy: `Individual` (abstract) → `AllianceDirect` / `AllianceFlow` (abstract, shared alliance behavior) → `FireNation` / `EarthKingdom` / `WaterTribe` / `AirNomad` → `MasterFireNation` / etc. (Singleton specializations). Each level adds exactly the behavior that belongs at that level, nothing duplicated.
+**Inheritance** — a four-level hierarchy: `Individual` (abstract) → `IndustrialAlliance` / `HarmoniousAlliance` (abstract, shared alliance behavior) → `FireNation` / `EarthKingdom` / `WaterTribe` / `AirNomad` → `MasterFireNation` / etc. (Singleton specializations). Each level adds exactly the behavior that belongs at that level, nothing duplicated.
 
 **Polymorphism** — `move()` is called identically on every individual in the shuffled roster regardless of concrete type; a Master's overridden empty body *is* the polymorphism (same call site, different behavior by runtime type). `getSymbol()` works the same way for rendering.
 
@@ -74,7 +74,7 @@ This project was built specifically to put the course's core ideas into practice
 
 | File | Role |
 |---|---|
-| `Individual`, `AllianceDirect`, `AllianceFlow` | The abstract hierarchy — shared state and movement template |
+| `Individual`, `IndustrialAlliance`, `HarmoniousAlliance` | The abstract hierarchy — shared state and movement template |
 | `FireNation`, `EarthKingdom`, `WaterTribe`, `AirNomad` | The four concrete factions |
 | `MasterFireNation`, `MasterEarthKingdom`, `MasterWaterTribe`, `MasterAirNomad` | Singleton Master specializations |
 | `Direction` | The 8-direction enum |
@@ -95,7 +95,13 @@ This project was built specifically to put the course's core ideas into practice
 - Movement is straight-line only, no pathfinding around obstacles.
 - The step limit and starting parameters (EP, map size, obstacle count) are hardcoded in `MainClass` rather than configurable through a setup screen.
 
+## Ideas not yet built
+
+- A `MovementStrategy` interface (Strategy pattern) as the project's second design pattern.
+- Headless multi-run statistics mode for measuring faction win rates.
+- Random mid-game events (the spec's meteor/virus bonus).
+- A configurable setup screen instead of hardcoded constants.
 
 ## Team
 
-[**GYAMFI Nana Agyemang**](https://agyemangdev-portfolio.vercel.app/)
+*(fill in names and roles per the assignment's anonymous role-assignment requirement)*

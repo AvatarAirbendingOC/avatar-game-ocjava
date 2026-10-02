@@ -86,7 +86,7 @@ public final class EncounterResolver {
     }
 
     private static boolean sameAlliance(Individual a, Individual b) {
-        return (a instanceof AllianceDirect) == (b instanceof AllianceDirect);
+        return (a instanceof IndustrialAlliance) == (b instanceof IndustrialAlliance);
     }
 
     private static Class<? extends Individual> getFactionRoot(Individual ind) {

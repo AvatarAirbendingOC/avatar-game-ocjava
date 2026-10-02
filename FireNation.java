@@ -1,4 +1,4 @@
-public class FireNation extends AllianceDirect {
+public class FireNation extends IndustrialAlliance {
 
     protected static int instanceCount = 0;
 

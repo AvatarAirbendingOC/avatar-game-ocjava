@@ -1,4 +1,4 @@
-public class AirNomad extends AllianceFlow {
+public class AirNomad extends HarmoniousAlliance {
 
     protected static int instanceCount = 0;
 
